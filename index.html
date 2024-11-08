@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Christmas Celebration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffefba, #ffffff);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #d32f2f;
+            color: white;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .celebrate {
+            margin: 40px 0;
+            font-size: 1.5em;
+            color: #d32f2f;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+        }
+
+        .icon {
+            margin: 20px;
+            font-size: 4em;
+            color: #d32f2f;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            #countdown {
+                font-size: 1.5em;
+            }
+            .icon {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>2024 Christmas Celebration</h1>
+</header>
+
+<div id="countdown"></div>
+
+<div class="celebrate">Let's Celebrate with Joy and Happiness!</div>
+
+<div>
+    <i class="fas fa-snowflake icon"></i>
+    <i class="fas fa-gift icon"></i>
+    <i class="fas fa-tree icon"></i>
+    <i class="fas fa-star icon"></i>
+</div>
+
+<footer>
+    <p>Wishing you a Merry Christmas and a Happy New Year!</p>
+</footer>
+
+<script>
+    function updateCountdown() {
+        const now = new Date();
+        const targetDate = new Date('2024-12-25T00:00:00'); // Christmas 2024
+
+        const difference = targetDate - now;
+
+        if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML =
+                `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+        } else {
+            document.getElementById('countdown').innerHTML = "Merry Christmas!";
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call to display immediately
+</script>
+
+</body>
+</html>
